@@ -4,15 +4,15 @@ import requests
 
 
 
-CLIENT_ID = "OXvNI_nPlU1P7A"
-CLIENT_SECRET = "HSM-CE06KHiwwbAfmlAfGDH8OqgyJw"
-REDIRECT_URI = "http://localhost"
+CLIENT_ID = "Put your ID here"
+CLIENT_SECRET = "Your secred key here"
+REDIRECT_URI = "Whatever URL you specified while making the app"
 
 
 
 app=Flask(__name__)
 
-app.config['SECRET_KEY']="5C201B"
+app.config['SECRET_KEY']="1243BB"
 
 with open('password.txt','r') as f:
     passw=''
@@ -29,17 +29,17 @@ auth = requests.auth.HTTPBasicAuth(CLIENT_ID,CLIENT_SECRET)
 data={
 
     'grant_type':'password',
-    'username':'Titan0932',
+    'username':' ',		#YOUR REDDIT USERNAME HERE!!
     'password':passw
 }
 
-headers={'User-Agent':'MyAPI/0.0.1',
-        'Authorization':'bearer 439051664176-6TTLkQ0CekMdqwej7NdLlQgXwcEyNA'
+headers={'User-Agent':'MyAPI/0.0.1'
         }
 
 res = requests.post('https://www.reddit.com/api/v1/access_token',
                     auth=auth, data=data, headers=headers)
 TOKEN = res.json()['access_token']
+
 
 
 headers['Authorization']=f'bearer {TOKEN}'
@@ -54,7 +54,7 @@ res=requests.get(f'https://oauth.reddit.com/r/{sub_reddits[sub_r]}/hot', headers
 api_data=res.json()
 
 '''
-with open('static/data/dankmemes-api.json','w') as f:
+with open('static/data/dankmemes-api.json','w') as f:		#THIS WAS TO PROPERLY FORMAT THE API DATA AND EVALUATE IT!!
     json.dump(res.json(),f,indent=4)
 '''
 
