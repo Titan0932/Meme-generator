@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title> Meme Time!!</title>
+        <link href='static/styles/style1.css' rel='stylesheet' type='text/css'>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+        <style>
+            :root{
+    
+    --main-theme:rgb(68,60,156);
+    --content-theme: rgb(0, 0, 0);
+}
+        </style>
+
+        <script> 
+var myFunc=(counter)=>{
+    var r = document.querySelector(':root');
+    var rs = getComputedStyle(r);
+
+    if (counter===1){
+        r.style.setProperty('--main-theme', 'rgb(68,60,156)');
+        r.style.setProperty('--content-theme', 'rgb(0, 0, 0)');
+    }
+    else{
+        r.style.setProperty('--main-theme', 'rgb(0, 0, 0)');
+        r.style.setProperty('--content-theme', 'rgb(68,60,156)');
+    }
+}
+
+     let argu={{counter}};
+    myFunc(argu)    
+         </script>
+        
+    </head>
+
+    <body>
+        <header>
+            <h1> Let's Laugh, Shall we? </h1> 
+        </header>
+
+        <main>
+            <div class='meme-main'>
+
+                <div class='meme-heading'>
+
+                    <h2>{{memes['title']}}</h2>
+
+                </div> 
+
+                <div class='meme-content'>
+                    <p id='title'> By: {{memes['User']}} </p>
+
+                    <div class='meme-img'> <img src='{{ memes["image"] }}'alt='the-meme''> </div>
+
+                    <div class='meme-footer'>
+                        <div class='votes-container'>
+                            
+                            <img src="{{ url_for('static', filename='/images/upVotes.png')}}" id='upvote' alt='Upvote'>
+                            <p id='votes'>{{memes['UpVotes']}}</p>
+                        
+                        
+                            <img src="{{ url_for('static', filename='/images/downVotes.png')}}" id='downvote' alt="downvote">
+                            <p id='votes'>{{memes['DownVotes']}}</p>
+                        
+                        </div>
+                    
+                    
+                    <div class='more-container'>
+
+                        <form action=# method='POST'>
+
+                            <button>More!</button>
+
+                        </form>    
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            <div class='funny-Text'>
+                <h2> {{message}} </h2>   
+                
+            </div>
+            <span class='psst'>
+                <h4 style="text-align: left;transform: translate(10rem,-1.5rem); border: 3px solid white;"> Psssst.. Refresh to change theme!</h2>
+                </span>
+            
+        </main>
+        <footer>
+            <h2> &copy Anjish Pradhananga </h2>
+        </footer>
+
+        
+
+    </body>
+
+</html>
+
+
+
+  
+        

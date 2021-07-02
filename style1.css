@@ -1,0 +1,199 @@
+html,body{
+    padding: 0;
+    border: 0;
+    outline: 0;
+    position: relative;
+    top:-12px;
+    left:0;
+    margin:0 0 0 0;
+    width:100%;
+    height: 100%;
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+
+
+
+header{
+    background-color:var(--main-theme);
+    position:relative;
+    
+    left:0;
+    width:100%;
+    height:10rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+header h1{font-size:3rem;}
+
+main{
+    position:absolute;
+    top:10rem;
+    height:100vh;
+    width:100%;
+    display:grid;
+    grid-template-columns:70% 30%;
+    background-color:yellowgreen;
+    align-items:center;
+      
+}
+
+main .meme-main{
+    display:flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+main .meme-main .meme-heading{
+    display:flex;
+    justify-content: center;
+    text-overflow: ellipsis;
+    background-color:var(--content-theme);
+    height:30%;
+    width:50%;
+}
+
+main .meme-main .meme-content{
+    
+    background-color: var(--main-theme);
+    width:50%;
+
+    
+}
+
+main .meme-main .meme-content p{
+    margin-left:3em;
+    font-weight: bold;
+}
+
+main .meme-content .meme-img{
+    background: white;
+    width:80%;
+    height:22rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left:3em;
+    
+}
+main .meme-content .meme-img img{
+
+    width: 22rem;
+    height: 20rem;
+    animation-name:meme-reveal;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+
+}
+
+@keyframes meme-reveal{
+ 
+    0%{opacity:0;}
+    100%{opacity:1;}
+
+}
+
+
+
+main .meme-main .meme-content .meme-footer{
+    margin-top:1rem;
+    margin-left:3em;
+    display:grid;
+    grid-template-columns: 70% 30%;
+
+}
+
+main .meme-content .meme-footer .votes-container{
+
+    display:grid;
+    grid-template-columns: 10% auto 10% auto;
+    width:30%;
+    
+}
+
+#votes{transform: translate(-0.5rem,0);}
+
+.votes-container #upvote{
+    transform: translate(0,-1rem);
+}
+
+main .meme-content .meme-footer img{
+
+    width:3.125em;
+    height:4.188em;
+
+}
+
+.meme-footer .more-container button{
+
+    background-color: ivory;
+    font-weight:bold;
+    width:5em;
+    height:3em;
+    font-size: larger;
+    box-shadow: 0 0 3px  3px rgb(105, 199, 58);
+    border:none;
+}
+.meme-footer .more-container button:hover{
+    background-color: rgb(173, 221, 78);
+    color:white;
+}
+
+.funny-Text{
+    display: flex;
+    background-color: var(--content-theme);
+    width:60%;
+    height:12rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    padding:1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 40%;
+
+    color: yellowgreen;
+    animation-name:reveal;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes reveal{
+
+    0%{transform: scale(0);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(1);}
+}
+
+
+
+.psst{
+    height: 30%;
+    width: 50%;
+    transform: translate(60rem,-5rem);
+}
+
+footer{
+    position: relative;
+    display:flex;
+    width:100%;
+    background-color: var(--main-theme);
+    height:8rem;
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 44.5rem;
+
+}
+
